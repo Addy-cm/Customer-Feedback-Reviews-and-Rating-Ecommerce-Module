@@ -30,15 +30,12 @@ const port = process.env.PORT || 8000;
 
 const mogodb = process.env.MONGO_DB_URL; 
 
-mongoose.connect(mogodb, {useNewUrlParser:true,useUnifiedTopology:true}).then(()=>
+mongoose.connect("mongodb://127.0.0.1:27017/reviews", {useNewUrlParser:true,useUnifiedTopology:true}).then(()=>
     console.log("Db connceted")
 ).catch((err)=>{
 console.log(err)
 
 })
-
-
-
 
 // router configuration
 app.use("/api/users", require("./Routes/UserRoutes"));

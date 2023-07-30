@@ -45,7 +45,7 @@ const Registration = () => {
         setUser({ ...user, password: event.target.value });
            console.log(user)
 
-        if (event.target.value.trim() == "")
+        if (event.target.value.trim() === "")
           setUserError({ ...userError, passwordError: "Enter a proper Password" });
         else setUserError({ ...userError, passwordError: "" });
       };
